@@ -16,7 +16,7 @@ try {
         $email = $_POST['email'];
         $name = $_POST['name'];
         $message = $_POST['message'];
-        $subject = $name . " contacting you via Biglarpour.com";
+        $subject = $name . " contacting you via Elpatronit.com";
 
         $error_message = "";
         $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
@@ -42,9 +42,9 @@ try {
         $mail = new PHPMailer();
         $mail->SMTPDebug  = 0;
         $mail->SMTPAuth   = true;
-        $mail->SMTPSecure = "ssl";
+        $mail->SMTPSecure = "tls";
         $mail->Host       = "smtp.office365.com";
-        $mail->Port       = 25;
+        $mail->Port       = 587;
         $mail->AddAddress("<info@elpatronit.com>");
         $mail->Username= "<stuart.nuttall@equilibriumict.com>";
         $mail->Password= "<Burnl3y512>";

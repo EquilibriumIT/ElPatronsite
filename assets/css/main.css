@@ -74,6 +74,7 @@
 		    width: 300px !important;
 		}
 
+
 	}
 
 	@media screen and (max-width: 736px) {
@@ -1608,3 +1609,9 @@
 		body.is-loading #footer {
 			opacity: 0;
 		}
+
+@media screen and (max-width: 736px) {		
+	#main-logo-icon {
+    margin: 11px;
+	}
+}

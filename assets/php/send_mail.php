@@ -45,11 +45,10 @@ try {
         $mail->SMTPSecure = "tls";
         $mail->Host       = "smtp.office365.com";
         $mail->Port       = 587;
-        $mail->AddAddress("info@elpatronit.com");
+        $mail->AddAddress= "info@elpatronit.com";
         $mail->Username= "stuart.nuttall@equilibriumict.com";
+        $mail->from= "stuart.nuttall@equilibriumict.com";
         $mail->Password= "Burnl3y512";
-        $mail->SetFrom($email, $name);
-        $mail->AddReplyTo($email, $name);
         $mail->Subject    = $subjectenquiry;
         $mail->MsgHTML($message);
         $mail->Send();

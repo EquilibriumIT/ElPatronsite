@@ -44,7 +44,7 @@ try {
         $mail->SMTPAuth   = true;
         $mail->SMTPSecure = "ssl";
         $mail->Host       = "smtp.office365.com";
-        $mail->Port       = 465;
+        $mail->Port       = 25;
         $mail->AddAddress("<info@elpatronit.com>");
         $mail->Username= "<stuart.nuttall@equilibriumict.com>";
         $mail->Password= "<Burnl3y512>";

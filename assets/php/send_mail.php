@@ -42,7 +42,7 @@ try {
             died($error_message);
         }
 
-        $html_body = "Name: " . $name . "<br>" . "Email: " . $email . "<br>" . "Company: " . $company . "<br>" . "Phone: " . $phone . "<br>" . "Message: " . $message
+        $html_body = "Name: " . $name . "<br>" . "Email: " . $email . "<br>" . "Company: " . $company . "<br>" . "Phone: " . $phone . "<br>" . "Message: " . $message;
 
         $mail = new PHPMailer(true);
         $mail->isSMTP();

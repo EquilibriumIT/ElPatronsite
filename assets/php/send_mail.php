@@ -43,17 +43,17 @@ try {
         $mail->SMTPDebug  = 0;
         $mail->SMTPAuth   = true;
         $mail->SMTPSecure = "ssl";
-        $mail->Host       = "smtp.gmail.com";
+        $mail->Host       = "smtp.office365.com";
         $mail->Port       = 465;
-        $mail->AddAddress("<insert email to>");
-        $mail->Username= "<insert username>";
-        $mail->Password= "<insert password>";
+        $mail->AddAddress("<info@elpatronit.com>");
+        $mail->Username= "<stuart.nuttall@equilibriumict.com>";
+        $mail->Password= "<Burnl3y512>";
         $mail->SetFrom($email, $name);
         $mail->AddReplyTo($email, $name);
-        $mail->Subject    = $subject;
+        $mail->Subject    = $subjectenquiry;
         $mail->MsgHTML($message);
         $mail->Send();
-        header("Location:https://biglarpour.com");
+        header("Location:https://elpatronit.com");
         exit();
         }
     else{

@@ -39,20 +39,26 @@ try {
             died($error_message);
         }
 
-        $mail = new PHPMailer();
-        $mail->SMTPDebug  = 0;
-        $mail->SMTPAuth   = true;
-        $mail->SMTPSecure = "tls";
+        $mail = new PHPMailer(true);
+        $mail->isSMTP();
         $mail->Host       = "smtp.office365.com";
         $mail->Port       = 587;
-        $mail->AddAddress= "info@elpatronit.com";
-        $mail->Username= "stuart.nuttall@equilibriumict.com";
-        $mail->from= "stuart.nuttall@equilibriumict.com";
-        $mail->Password= "Burnl3y512";
+        $mail->SMTPSecure = "tls";
+        $mail->SMTPAuth   = true;
+        $mail->Username   = "stuart.nuttall@equilibriumict.com";
+        $mail->Password   = "Burnl3y512";
+        $mail->SetFrom("stuart.nuttall@equilibriumict.com", "FromEmail");
+        $mail->AddAddress("info@elpatronit.com", "ToEmail");
+        $mail->SMTPDebug  = 3;
+        $mail->Debugoutput = function($str, $level) {echo "debug level $level; message: $str";}; //$mail->Debugoutput = 'echo';
+        $mail->IsHTML(true);
         $mail->Subject    = $subjectenquiry;
         $mail->MsgHTML($message);
-        $mail->Send();
-        header("Location:https://elpatronit.com");
+        if(!$mail->send()) {
+            $error_message .= 'Mailer Error: ' . $mail->ErrorInfo;
+            died($error_message);
+        }
+        header("Location:https://elpatronit.com/#contact_success");
         exit();
         }
     else{

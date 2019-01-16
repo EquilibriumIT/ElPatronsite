@@ -16,7 +16,10 @@ try {
         $email = $_POST['email'];
         $name = $_POST['name'];
         $message = $_POST['message'];
+        $company = $_POST['company'];
+        $phone = $_POST['phone'];
         $subject = $name . " contacting you via Elpatronit.com";
+
 
         $error_message = "";
         $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
@@ -39,6 +42,8 @@ try {
             died($error_message);
         }
 
+        $html_body = "Name: " . $name . "<br>" . "Email: " . $email . "<br>" . "Company: " . $company . "<br>" . "Phone: " . $phone . "<br>" . "Message: " . $message
+
         $mail = new PHPMailer(true);
         $mail->isSMTP();
         $mail->Host       = "smtp.office365.com";
@@ -49,11 +54,9 @@ try {
         $mail->Password   = "Burnl3y512";
         $mail->SetFrom("stuart.nuttall@equilibriumict.com", "FromEmail");
         $mail->AddAddress("info@elpatronit.com", "ToEmail");
-        $mail->SMTPDebug  = 3;
-        $mail->Debugoutput = function($str, $level) {echo "debug level $level; message: $str";}; //$mail->Debugoutput = 'echo';
         $mail->IsHTML(true);
-        $mail->Subject    = $subjectenquiry;
-        $mail->MsgHTML($message);
+        $mail->Subject    = $subject;
+        $mail->MsgHTML($html_body);
         if(!$mail->send()) {
             $error_message .= 'Mailer Error: ' . $mail->ErrorInfo;
             died($error_message);

@@ -23,7 +23,7 @@ try {
         $string_exp = "/^[A-Za-z .'-]+$/";
 
 
-        if(!array_key_exists('gotcha', $_POST)) {
+            if(!array_key_exists('gotcha', $_POST)) {
             died("Who do you think you are trying to abuse us.");
         }
 
@@ -44,7 +44,7 @@ try {
         $mail->SMTPAuth   = true;
         $mail->SMTPSecure = "tls";
         $mail->Host       = "smtp.office365.com";
-        $mail->Port       = 25;
+        $mail->Port       = 587;
         $mail->AddAddress("info@elpatronit.com");
         $mail->Username= "stuart.nuttall@equilibriumict.com";
         $mail->Password= "Burnl3y512";

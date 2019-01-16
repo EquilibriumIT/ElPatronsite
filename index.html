@@ -52,7 +52,24 @@
 						<!-- Client Login -->
 						<article id="clientlogin">
 							<h2 class="major">Client Login</h2>
-							<p>El Patron.</p>
+							<p>Please Login to access your El Patron IT.</p>
+							<div id="id01" class="modal">
+
+								<form method="post" action="assets/php/login.php">
+									<div class="field first">
+										<label for="uname">Username</label>
+										<input type="text" name="uname" id="uname" required/>
+									</div>
+									<div class="field">
+										<label for="psw">Password</label>
+										<input type="password" name="psw" id="psw" required/>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Log In" class="special login" /></li>
+										<span class="psw">Forgot <a href="#">password?</a></span>
+									</ul>
+								</form>
+							</div>
 						</article>
 
 						<!-- Contact -->

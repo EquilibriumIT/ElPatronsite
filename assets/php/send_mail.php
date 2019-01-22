@@ -51,7 +51,7 @@ try {
         $mail->SMTPSecure = "tls";
         $mail->SMTPAuth   = true;
         $mail->Username   = "stuart.nuttall@equilibriumict.com";
-        $mail->Password   = "Burnl3y512";
+        $mail->Password   = "";
         $mail->SetFrom("stuart.nuttall@equilibriumict.com", "FromEmail");
         $mail->AddAddress("info@elpatronit.com", "ToEmail");
         $mail->IsHTML(true);

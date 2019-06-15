@@ -50,8 +50,8 @@ try {
         $mail->Port       = 587;
         $mail->SMTPSecure = "tls";
         $mail->SMTPAuth   = true;
-        $mail->Username   = $_ENV["help@elpatronit.com"];
-        $mail->Password   = $_ENV["P@ssword123456!"];
+        $mail->Username   = "help@elpatronit.com";
+        $mail->Password   = "P@ssword123456!";
         $mail->SetFrom($_ENV["USERNAME"], "FromEmail");
         $mail->AddAddress("info@elpatronit.com", "ToEmail");
         $mail->IsHTML(true);

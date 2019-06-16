@@ -50,9 +50,9 @@ try {
         $mail->Port       = 587;
         $mail->SMTPSecure = "tls";
         $mail->SMTPAuth   = true;
-        $mail->Username   = "info@elpatronit.com";
+        $mail->Username   = "help@elpatronit.com";
         $mail->Password   = "P@ssword123456!";
-        $mail->SetFrom("info@elpatronit.com", "FromEmail");
+        $mail->SetFrom("help@elpatronit.com", "FromEmail");
         $mail->AddAddress("info@elpatronit.com", "ToEmail");
         $mail->IsHTML(true);
         $mail->Subject    = $subject;

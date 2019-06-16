@@ -53,7 +53,7 @@ try {
         $mail->Username   = "support@americaryugakucenter.com";
         $mail->Password   = "@rc123456";
         $mail->SetFrom("support@americaryugakucenter.com", "FromEmail");
-        $mail->AddAddress("support@americaryugakucenter.com", "ToEmail");
+        $mail->AddAddress("sales@americaryugakucenter.com", "ToEmail");
         $mail->IsHTML(true);
         $mail->Subject    = $subject;
         $mail->MsgHTML($html_body);

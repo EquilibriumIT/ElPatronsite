@@ -51,7 +51,7 @@ try {
         $mail->SMTPSecure = "tls";
         $mail->SMTPAuth   = true;
         $mail->Username   = "support@americaryugakucenter.com";
-        $mail->Password   = "getenv("EMAIL_PASSWORD")";
+        $mail->Password   = getenv("EMAIL_PASSWORD");
         $mail->SetFrom("support@americaryugakucenter.com", "FromEmail");
         $mail->AddAddress("sales@americaryugakucenter.com", "ToEmail");
         $mail->IsHTML(true);
